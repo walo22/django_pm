@@ -26,7 +26,7 @@
 </ul>
 
 <div class ="card mt-2">
-    <from method = "post" action= "{%url 'Task_create' %}" class = "d-flex">
+    <from method = "post" action= "{% url 'Task_create' %}" class = "d-flex">
         {%csrf_token%}
         <div class="input-group">
             <input type = "hidden" value= "{{Project.id}}" name = "Project">

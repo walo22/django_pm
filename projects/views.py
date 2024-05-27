@@ -9,14 +9,14 @@ from . import forms
 class ProjectListView(ListView):
     model = models.Project
     template_name = 'project/list.html' # القوالب
-    #paginaate_by = 6
+    paginaate_by = 6
     # لاظهار قائمه البحث
     def get_queryset(self):
         query_set = super().get_queryset()
         where = {}
-        q =self.request.GET.get('q',None )
+        q =self.request.GET.get('q',None)
         if q :
-            where['title_icontains']= q 
+            where['title__icontains'] = q 
         return query_set.filter(**where)   
 
 #لازم له مسار 
