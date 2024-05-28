@@ -29,7 +29,7 @@
     <from method = "post" action= "{% url 'Task_create' %}" class = "d-flex">
         {%csrf_token%}
         <div class="input-group">
-            <input type = "hidden" value= "{{Project.id}}" name = "Project">
+            <input type = "hidden" value= "{{Project.id}}" name = "Project"/>
             <input type = "text" name= "description" class ="form-control " placeholder= "{% trans 'new Task' %}"required/>
             <input type = "submit" class= "btn btn-outline-dark" value= "{% trans 'Add '%}" />
         </div>
