@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf.global_settings import AUTH_USER_MODEL # لاستخدام خواص اليوزر 
+from django.utils.translation import gettext as _
 
 # Create your models here.
 
@@ -13,10 +14,10 @@ class Category(models.Model):
 
 #تصريح عن الحالات 
 class ProjectStatus(models.IntegerChoices): #عباره عن صنف او نمودج مساعد لتمثيل حاجه المشروع
-    PENDING = 1, 'Pending' #قيد التنفيد
-    COMPLETED = 2,'Completed' #
-    POSTPONED = 3, 'Postponed' # موجل 
-    CANCELED= 4, 'Canceled' # ملغى
+    PENDING = 1, _('Pending') #قيد التنفيد
+    COMPLETED = 2,_('Completed') #
+    POSTPONED = 3, _('Postponed') # موجل 
+    CANCELED= 4, _('Canceled') # ملغى
 
 
 class Project(models.Model):
